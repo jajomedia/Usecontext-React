@@ -5,6 +5,8 @@ import UserList from './components/UserList';
 
 // Importar el CONTEXT
 import UserState from './context/User/UserState';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
 // Importar componentes
 
 function App() {

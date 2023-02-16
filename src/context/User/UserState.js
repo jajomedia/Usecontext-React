@@ -15,14 +15,20 @@ const UserState = (props) => { // Un state se define dentro de una objeto
     
     const getUsers = async () => { // Esta es la funtion para llenar el state - para que cuando profile y userList quieran consumir el estado se dirigan a UserState
       const respuesta =  await axios.get( 'https://reqres.in/api/users' )
-      console.log(respuesta);
+      dispatch({
+        type: 'GET_USERA',
+        payload: respuesta.data.data
+      })
     }  
     // Obtener un unico usuario
 
     
     const getProfile = async (id) => { // Traer un unico usuario - nos trae un unico objeto para llenar UserState
         const resp =  await axios.get( 'https://reqres.in/api/users/' + id );
-        console.log(resp);
+        dispatch({
+            type: 'GET_PROFILE',
+            payload: resp.data.data
+        })
      }
 // Obtener todos los usuarios
 
